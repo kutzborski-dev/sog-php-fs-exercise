@@ -10,6 +10,6 @@ class HomeController {
 
     public function render() {
         // Echo view or html
-        echo 'Home rendered';
+        return view('home');
     }
 }

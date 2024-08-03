@@ -10,16 +10,18 @@ class ForestController extends Controller {
     }
 
     public function index() {
-        return 'Forest list rendered';
+        return view('forest/list');
     }
 
     public function single($forestName) {
-        return 'Forest "'. $forestName .'" rendered';
+        return view('forest/single', [
+            'forestName' => $forestName
+        ]);
     }
 
     public function render() {
         // Handle which function should be returned based on query parameters
-        
+
         if(array_key_exists('name', $this->params)) {
             return $this->single($this->params['name']);
         }
