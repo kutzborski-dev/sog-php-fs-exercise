@@ -1,0 +1,17 @@
+{
+    "name": "ak/sog-php-fs-exercise",
+    "description": "Prototype application to display history details about forest wildfires in the US, for the safety of hiker",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\SogWildfires\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andre Kutzborski",
+            "email": "andre.kutzborski@gmail.com"
+        }
+    ],
+    "require": {}
+}
