@@ -6,7 +6,7 @@
         "psr-4": {
             "App\\": "src/"
         },
-        "files": ["src/helpers/routing.php"]
+        "files": ["src/helpers/routing.php", "src/helpers/dates.php", "src/helpers/strings.php"]
     },
     "authors": [
         {

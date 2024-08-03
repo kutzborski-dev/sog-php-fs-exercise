@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Repositories\ForestRepository;
+
 class HomeController {
     public function __construct()
     {
@@ -9,7 +11,11 @@ class HomeController {
     }
 
     public function index() {
-        return view('home');
+        $forests = ForestRepository::getAll();
+
+        return view('home', [
+            'forests' => $forests
+        ]);
     }
 
     public function render() {
