@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Repositories\ForestRepository;
+use App\Repositories\ForestFireRepository;
+
 class ForestController extends Controller {
     public function __construct()
     {
@@ -10,11 +13,16 @@ class ForestController extends Controller {
     }
 
     public function index() {
-        $forestName = $this->params['name'] ?? null;
-        if(!$forestName) throw 'A forest name is required for this route';
+        $forestName = $this->params['forest'] ?? null;
+        if(!$forestName) throw new \Exception('A forest name is required for this route');
+
+        $forest = ForestRepository::getBySlug($forestName);
+        $fires = ForestFireRepository::getByForestSlug($forestName);
+
+        $forest->setFires($fires);
         
         return view('forest/single', [
-            'forestName' => $forestName
+            'forest' => $forest
         ]);
     }
 
