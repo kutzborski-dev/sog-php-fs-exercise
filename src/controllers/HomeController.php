@@ -8,8 +8,12 @@ class HomeController {
         // Use the constructor to set query parameters in the controller class
     }
 
+    public function index() {
+        return view('home');
+    }
+
     public function render() {
         // Echo view or html
-        return view('home');
+        return $this->index();
     }
 }
